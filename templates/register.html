@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+{%block content %}
+
+    <div class="login-body">
+        <div class="container">
+            <h1>SIGN UP</h1>
+            <form action="{{ url_for('main.register') }}" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-control">
+    
+                    {{form.username.label}} <br>
+                    {{form.username(size=30)}}
+                 
+                </div>
+                <div class="form-control">
+                    {{form.email.label}} <br>
+                    {{form.email(size=30)}}
+                </div>
+                <div class="form-control">
+                    {{form.password.label}} <br>
+                    {{form.password(size=30)}}
+                </div>
+                <div class="form-control">
+                    {{form.confirm_password.label}} <br>
+                    {{form.confirm_password(size=30)}}
+                </div>
+                <div class="btn">{{form.submit()}}</div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

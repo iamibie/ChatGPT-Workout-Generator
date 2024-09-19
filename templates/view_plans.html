@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+
+<div style="border: solid red; color: white; max-height: 400px; overflow-y: auto; padding: 10px;">
+    <h1>Your Workout Plans</h1>
+    <ul>
+        {% for plan in plans %}
+        <li>
+            <h2>Week {{ loop.index }}</h2>
+            <pre style="white-space: pre-wrap;">{{ plan.plan | safe }}</pre>
+           <!--  <p>{{ plan.plan | safe }}</p>-->
+           
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<!--  -->
+{% endblock %}

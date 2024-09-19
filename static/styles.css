@@ -1,0 +1,301 @@
+
+:root{
+    --left-bg-color:rgba(87, 84, 236, 0.7);
+    --right-bg-color:rgba(43, 43, 43, 0.8);
+    --left-btn-hover-color: rgba(87, 84, 236, 1);
+    --right-btn-hover-color: rgba(28, 122, 28, 1);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+
+*{
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+
+
+/************************BASE**************/
+body{
+    background-color: steelblue;
+    color: white;
+    font-family: sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+.logo{
+position: relative;
+top: 0;
+left: 0;
+font-size: 5rem;
+text-align: center;
+}
+
+
+
+
+/********NAV******/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 80px;
+    height: 70px;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0, 0.3);
+    transition: width 0.6s linear;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+}
+
+nav.active {
+    width: 550px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav ul a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+}
+
+
+
+
+
+
+.icon {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+.icon:focus {
+    outline: 0;
+}
+
+.icon .line {
+    background-color: #5290f9;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+    top: auto;
+    bottom: 10px;
+}
+
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+
+}
+
+
+/********************END-NAV********************/
+
+
+
+
+
+/*****************LOGIN******************/
+
+.login-body {
+    background-color: steelblue;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 80vw;
+    overflow: hidden;
+    margin-top: 100px;
+    position: absolute;
+    top: 8rem;
+    left: 10rem;
+    
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+    position: absolute;
+    top: 35px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container a {
+    text-decoration: none;
+    color: lightblue;
+}
+.container input:active {
+    transform: scale(0.98);
+}
+
+.btn input{
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 0;
+    border-radius: 5px;
+
+}
+.btn input:focus{
+    outline: 0;
+
+}
+.btn input:active{
+    transform: scale(0.98);
+}
+
+
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+.form-group{
+    position: relative;
+    margin: 20px 0 40px;
+    width: 200px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px white solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+.text {
+    margin-top: 30px;
+}
+
+
+
+/************HOme******************/
+.main-vid{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1000000; 
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+.home h1{
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.home p{
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+.home a{
+           text-decoration: none; 
+           text-align: center;
+           cursor: pointer; 
+           display: inline-block;
+           width: 12rem;
+           background: var(--left-bg-color);
+           padding: 15px;
+           font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+           font-size: 20px;
+           border: 0;
+           border-radius: 5px;
+           color: white;
+           font-weight: bolder;
+           margin-bottom: 10rem;
+
+}

@@ -1,0 +1,35 @@
+# Virtual environment
+venv/
+myenv/
+
+# Flask instance folder (can contain sensitive data)
+instance/
+
+# Migrations (auto-generated files, can be rebuilt)
+migrations/
+
+# Cache files
+*.pyc
+__pycache__/
+
+# Environment variables file
+.env
+
+# Database (SQLite example, if used for local development)
+*.db
+
+# Logs
+*.log
+
+# Static file cache (optional)
+static/cache/
+
+# Ignore IDE-specific settings (if applicable)
+.vscode/
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]

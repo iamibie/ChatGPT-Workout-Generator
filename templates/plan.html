@@ -1,0 +1,59 @@
+    
+
+{% extends "base.html" %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{%block content %}
+{% if plan %}
+<div style="border: solid red; color:white;">
+    <h1>Your Latest Workout Plan</h1>
+    <div style="white-space: pre-wrap; overflow: auto; max-height: 500px; background-color: #333; padding: 10px; border-radius: 5px;">
+        {% for plan in plan %}
+            <p>{{ plan.plan | safe }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<p>No workout plans available.</p>
+{% endif %}
+
+{% endblock %}
+
+
+<!--
+    div style="border: solid red; color:white;">
+    <h1>Your Workout Plans</h1>
+    <div style="white-space: pre-wrap; overflow: auto; max-height: 500px; background-color: #333; padding: 10px; border-radius: 5px;">
+        {{ plans[10].plan }}
+    </div>
+    </div>
+    
+        <ul>
+            {% for plan in plans %}
+                <li>
+                    <h2>Week {{ plan.week }}</h2>
+                    <p>{{ plan.plan | nl2br }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    -->
+
+
+
+    <!--{
+
+<body>
+    {% if plan %}
+    <div style="border: solid red; color: white; max-height: 400px; overflow-y: auto; padding: 10px;">
+        <h1>Your Workout Plan</h1>
+        <pre style="white-space: pre-wrap;">{{ plan.plan | safe }}</pre>
+     <div style="white-space: pre-wrap; overflow: auto; max-height: 500px; background-color: #333; padding: 10px; border-radius: 5px;">
+            {{ plan.plan | safe }} Display the last (most recent) plan 
+        </div> 
+    </div>
+    {% else %}
+    <p>No workout plans available.</p>
+    {% endif %}
+    <a href="{{ url_for('main.collect_stats') }}">Generate a new plan</a>
+</body>
+
+    }-->
